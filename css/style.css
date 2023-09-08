@@ -1,0 +1,785 @@
+/* 공통 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+body {
+  width: 100%;
+  background-color: #f3f6f8;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+}
+a {
+  display: block;
+}
+ul {
+  display: flex;
+}
+
+.wrap1170 {
+  width: 60.95vw;
+  margin: 0 auto;
+}
+.mr0 {
+  margin-right: 0 !important;
+}
+.pl0 {
+  padding-left: 0 !important;
+}
+.pr0 {
+  padding-right: 0 !important;
+}
+.roundBg {
+  border-radius: 25px;
+  background: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* header */
+#header {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+}
+.headerW {
+  display: flex;
+  justify-content: space-between;
+  min-height: 125px;
+  padding-top: 0.8%;
+  box-sizing: border-box;
+  align-items: center;
+}
+.headerW h1 {
+  width: 14%;
+}
+.headerW h1 a img {
+  width: 100%;
+  background-size: contain;
+}
+
+/* gnb */
+.gnb {
+  width: 45%;
+  padding: 26px 0;
+}
+ul.gnbW {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.gnbW li {
+  margin: 0 4px;
+}
+.gnbW li a {
+  padding: 0 0.75rem;
+  font: 500 18px "Noto Sans KR", sans-serif;
+  color: #07172a;
+}
+.rightInfo {
+  display: flex;
+  width: 28%;
+  justify-content: space-between;
+  align-items: center;
+}
+.search {
+  position: relative;
+}
+.search::after {
+  content: "";
+  display: block;
+  background: url("../img/ebz_dgb_sprite2023.png") no-repeat 0 0;
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.search input {
+  width: 214px;
+  height: 44px;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 40px;
+  padding: 0 36px 2px 18px;
+  font: 400 15px "Noto Sans KR", sans-serif;
+  color: #000;
+}
+
+/* placeholder 선택 시 outline 테두리 속성 수정 */
+input:focus {
+  border: none;
+  outline: 2px solid #006ddf;
+}
+
+/* placeholder 색상변경 크로스브라우징 */
+/* IE의 경우 */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #757575;
+}
+/* 크롬의 경우 */
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+  color: #757575;
+}
+
+/* input search x button 크로스브라우징 */
+/* IE의 경우 */
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+/* 크롬의 경우 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.language {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: url("../img/ebz_dgb_sprite2023.png") no-repeat -30px 0;
+  cursor: pointer;
+}
+.language > .languageList {
+  display: none;
+  position: absolute;
+  width: 80px;
+  left: -140%;
+  top: 180%;
+  padding: 10px 0;
+  border: solid 1px #000;
+  border-radius: 8px;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #fff;
+  z-index: 2;
+}
+.language.active > .languageList {
+  display: block;
+}
+.language > .languageList::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 9px;
+  position: absolute;
+  top: -7px;
+  left: 30px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -135px -10px;
+}
+.language > .languageList > li {
+  padding: 6px 0;
+  text-align: center;
+  color: #000;
+  font: 400 0.875rem "Noto Sans KR", sans-serif;
+}
+
+.allmenu {
+  width: 17px;
+  height: 16px;
+  margin: 2px 0;
+  background: url("../img/ebz_dgb_sprite2023.png") no-repeat -60px 0px;
+  cursor: pointer;
+}
+.topInfo {
+  position: absolute;
+  top: 8%;
+  right: 19.525vw;
+}
+ul.topInfoW {
+  display: flex;
+  justify-content: space-between;
+}
+.topInfoW li {
+  position: relative;
+}
+.topInfoW li::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 0.875rem;
+  position: absolute;
+  bottom: 11px;
+  right: 0;
+  background-color: #8d8d8d;
+}
+.topInfoW li:last-child::after {
+  display: none;
+}
+.topInfoW li a {
+  font-size: 0.875rem;
+  color: #8d8d8d;
+  margin: 8px;
+}
+
+/* mainVisual */
+#mainVisual {
+  padding: 26px 0;
+}
+.mainBanner {
+  height: 378px;
+  position: relative;
+}
+.swiper-pagination {
+  text-align: left;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  left: 5.5%;
+  bottom: 16%;
+  width: 4%;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 5px;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -110px -10px;
+  opacity: 1;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -110px 0;
+}
+.btn-wrapper {
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  z-index: 10;
+}
+.btn-wrapper .auto-start,
+.btn-wrapper .auto-stop {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+}
+.btn-wrapper .auto-start {
+  width: 8px;
+  height: 11px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -125px 0;
+  font-size: 0;
+  display: none;
+}
+.btn-wrapper .auto-stop {
+  width: 9px;
+  height: 9px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -135px 0;
+  font-size: 0;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+.swiper-slide .swiperTxt {
+  width: 40%;
+  height: 50%;
+  position: relative;
+  top: 19%;
+  left: 5.5%;
+}
+.t1 {
+  font: 500 30px "Noto Sans KR", sans-serif;
+  color: #000;
+  opacity: 0;
+  transform: translateX(60px);
+}
+.swiper-slide-active .swiperTxt .t1 {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s, opacity 2s;
+  transition-delay: 0.2s;
+}
+.t2 {
+  font: 500 54px/1.2 "Noto Sans KR", sans-serif;
+  color: #000;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: transform 1s, opacity 2s;
+}
+.swiper-slide-active .swiperTxt .t2 {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s, opacity 2s;
+  transition-delay: 0.4s;
+}
+.t3 {
+  font: 400 22px/2.5 "Noto Sans KR", sans-serif;
+  color: #5f626a;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: transform 1s, opacity 2s;
+}
+.swiper-slide-active .swiperTxt .t3 {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s, opacity 2s;
+  transition-delay: 0.6s;
+}
+.t4 a {
+  padding: 5px 12px 5px 0;
+  font: 400 17px/0.6 "Noto Sans KR", sans-serif;
+  letter-spacing: -1px;
+  color: #006ddf;
+  opacity: 0;
+  transform: translateX(60px);
+
+  transition: transform 1s, opacity 2s;
+  transition-delay: 1s;
+}
+.swiper-slide-active .swiperTxt .t4 a {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s, opacity 2s;
+  transition-delay: 0.8s;
+}
+.t4 a:hover {
+  text-decoration: underline;
+}
+.t4 a::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 11px;
+  margin-left: 8px;
+  padding-bottom: 0.6px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -155px 0;
+}
+.swiper-slide .slideImg {
+  position: relative;
+  top: 4%;
+  right: 5.5%;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: transform 2s, opacity 3s;
+}
+.swiper-slide-active .slideImg {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 2s, opacity 3s;
+}
+.swiper-slide .slideImg1 {
+  width: 538px;
+  height: 367px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -462px -231px;
+}
+.swiper-slide .slideImg2 {
+  width: 455px;
+  height: 305px;
+  margin: 2% 0.5% 0 0;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -471px -631px;
+}
+
+/* contentQuick */
+#contentQuick {
+}
+.quickMenu {
+  width: 100%;
+  height: 110px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+ul.quickMenuWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+  height: 100%;
+  margin: 0 auto;
+}
+.quickMenuWrap li a {
+  padding: 0 20px;
+  font: 400 25px "Noto Sans KR", sans-serif;
+  color: #000;
+}
+.quickMenuWrap li a:hover {
+  color: #006ddf;
+}
+/* contentMenu */
+#contentMenu {
+  margin-top: 26px;
+}
+ul.contentMenuW {
+  display: flex;
+  justify-content: space-between;
+}
+li.contentList {
+  width: 23.5%;
+  height: 130px;
+  cursor: pointer;
+  color: #000;
+}
+li.contentList:hover {
+  background-color: #006ddf;
+  color: #fff;
+}
+.contentListW {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10%;
+  box-sizing: border-box;
+}
+.contentListImg1 {
+  width: 61px;
+  height: 41px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat 0 -39px;
+}
+.contentListImg2 {
+  width: 65px;
+  height: 47px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -80px -40px;
+}
+.contentListImg3 {
+  width: 56px;
+  height: 51px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -158px -40px;
+  margin-left: 2%;
+}
+.contentListImg4 {
+  width: 46px;
+  height: 50px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -239px -38px;
+  margin-left: 2%;
+}
+.contentListTxt {
+  width: 60%;
+  margin-bottom: 2px;
+}
+.contentListTxt2 {
+  width: 66%;
+  margin-bottom: 2px;
+}
+.contentListTxt h3 {
+  display: block;
+  font: 600 18px "Noto Sans KR", sans-serif;
+}
+.contentListTxt p {
+  font: 400 15px/1.6 "Noto Sans KR", sans-serif;
+}
+
+/* contentArticle */
+#contentArticle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+.contentArticleW {
+  position: relative;
+  width: 58%;
+  height: 290px;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+.conArtTitle {
+  display: flex;
+  justify-content: space-between;
+}
+ul.conArtTitleW {
+}
+.conArtTitleW li {
+  font: 600 20px/1.6 "Noto Sans KR", sans-serif;
+  color: #909090;
+  cursor: pointer;
+}
+ul.conArtTitleW li.on {
+  color: #006ddf;
+}
+.conArtT1 {
+  margin-right: 1rem;
+}
+
+.conArtMore a {
+  text-decoration: underline;
+}
+
+.boardlist {
+  position: absolute;
+  display: none;
+  width: 88%;
+  height: 170px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.boardlist.on {
+  display: block;
+}
+.boardlist li {
+  padding: 0 0 2% 0;
+}
+.boardlist li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.boardlist li a::before {
+  display: block;
+  content: "˙";
+  position: absolute;
+  font: 500 15px/1.6 "Noto Sans KR", sans-serif;
+  color: #000;
+}
+.boardlist li a:hover .boardListTit {
+  text-decoration: underline;
+}
+
+.boardListTit {
+  font: 500 15px/1.6 "Noto Sans KR", sans-serif;
+  color: #000;
+  margin-left: 1rem;
+}
+.boardListSub {
+  font: 300 15px/1.6 "Noto Sans KR", sans-serif;
+  color: #666;
+}
+.appBoxW {
+  width: 40%;
+  height: 290px;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+h3.appBoxTitle {
+  color: #07172a;
+  font: 600 20px/1.6 "Noto Sans KR", sans-serif;
+}
+ul.appBoxList {
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  padding-top: 30px;
+  text-align: center;
+  margin: 0 auto;
+}
+.appBoxList li {
+}
+.appBoxList li a {
+  display: flex;
+  flex-direction: column;
+}
+.appBoxList li a p {
+  margin-top: 0.5rem;
+  font: 600 16px/1.6 "Noto Sans KR", sans-serif;
+  color: #000;
+}
+.appImg {
+  width: 89px;
+  height: 89px;
+  font-size: 0;
+}
+.appImg1 {
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat 0 -100px;
+}
+.appImg2 {
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -99px -100px;
+}
+.appImg3 {
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -199px -100px;
+}
+
+/* footer */
+#footer {
+  font: 500 14px/1.6 "Noto Sans KR", sans-serif;
+  margin: 20px 0 0 0;
+  padding: 32px 0;
+  border-top: solid 1px #e1e1e1;
+}
+.footerW {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul.footLink {
+  display: flex;
+  justify-content: space-between;
+  width: 58%;
+}
+.footLink li a {
+  color: #42464a;
+}
+
+.footRight {
+  display: flex;
+  justify-content: space-between;
+  width: 37%;
+}
+
+.selectMenu {
+  display: inline-block;
+  position: relative;
+  min-width: 110px;
+  border: solid 1px #f3f6f8;
+  /* border-radius: 8px; */
+  border-radius: 8px;
+  padding: 8px;
+}
+.bgbSite {
+  min-width: 146px;
+}
+.selectMenu.active {
+  border-radius: 0 0 8px 8px;
+  background-color: #fff;
+  border-color: #d1d1d1;
+}
+.selectMenu div {
+  position: relative;
+  color: #42464a;
+  cursor: pointer;
+}
+.selectMenu div p {
+  margin-right: 36px;
+  font-size: 13px;
+  color: #42464a;
+}
+
+.selectMenu div p::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 6px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -89px 0;
+  position: absolute;
+  top: 45%;
+  right: 0;
+}
+.selectMenu.active div p::after {
+  background-position: -90px -10px;
+}
+.selectMenu.active .footerList {
+  display: flex;
+}
+.footerList {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: -110px;
+  left: -1px;
+  flex-direction: column;
+  padding: 8px 0 0 0;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+  z-index: 5;
+}
+.bgbGroup > .footerList {
+  top: -417px;
+}
+.bgbSite > .footerList {
+  top: -613px;
+}
+.footerList li {
+  cursor: pointer;
+  color: #42464a;
+  line-height: 26px;
+  padding: 4px 8px;
+}
+
+.footerList li:hover {
+  text-decoration: underline;
+}
+.tellist {
+  position: relative;
+  left: -20px;
+}
+.tellItem {
+  position: relative;
+  display: flex;
+  max-width: 290px;
+  padding: 0 16px;
+  border: solid 1px #f3f6f8;
+}
+.tellist.active .tellItem {
+  border-radius: 0 0 8px 8px;
+  background-color: #fff;
+  border-color: #d1d1d1;
+}
+.tellItem h3 {
+  margin-right: 10px;
+  font: 500 15px/56px "Noto Sans KR", sans-serif;
+  color: #000;
+}
+.tellItem p {
+  position: relative;
+  margin-right: 32px;
+  font: 500 17px/56px "Noto Sans KR", sans-serif;
+  color: #006ddf;
+}
+.tellItem p::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 6px;
+  background: url(../img/ebz_dgb_sprite2023.png) no-repeat -89px 0;
+  position: absolute;
+  top: 45%;
+  right: -32px;
+  cursor: pointer;
+}
+.tellist.active .tellItem p::after {
+  background-position: -90px -10px;
+}
+ul.tellListMore {
+  display: none;
+  position: absolute;
+  top: -232px;
+  left: 0px;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+  z-index: 5;
+}
+.tellist.active .tellListMore {
+  display: flex;
+}
+.tellListMore li {
+  display: flex;
+  width: 288px;
+  border: solid 1px #f3f6f8;
+  padding: 0 16px;
+}
+.tellListMore li h3 {
+  margin-right: 10px;
+  font: 500 15px/56px "Noto Sans KR", sans-serif;
+  color: #000;
+}
+.tellListMore li p {
+  position: relative;
+  margin-right: 32px;
+  font: 500 17px/56px "Noto Sans KR", sans-serif;
+  color: #006ddf;
+}
+
+.footTxt {
+  display: flex;
+  align-items: center;
+}
+.footTxt span {
+  font: 300 13px "Noto Sans KR", sans-serif;
+  color: #000;
+  margin-right: 10px;
+}
+.footTxt a {
+  font-size: 0;
+  width: 50px;
+  height: 33px;
+  background: url(../img/ebz_wmark_standard.png) no-repeat center;
+}
