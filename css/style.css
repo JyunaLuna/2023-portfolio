@@ -1,5 +1,7 @@
 body {
-  font: 100 1rem "GmarketSans", "SCDream";
+  font-weight: 100;
+  font-size: 16px;
+  font-family: "GmarketSans", "SCDream";
   cursor: none !important;
 }
 
@@ -788,7 +790,7 @@ body {
 }
 
 .popup_detail {
-  height: 84vh;
+  height: 85vh;
   margin-top: 1.5rem;
   overflow-x: hidden;
 }
