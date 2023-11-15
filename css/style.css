@@ -803,16 +803,6 @@ ul.tellListMore {
 .topInfo {
   right: calc( (100vw - 1170px)/2 );
 }
-}
-@media screen and (max-width:1700px){
-  .wrap1170 {
-    width: 1170px;
-    margin: 0 auto;
-}
-.topInfo {
-  width: 1170px;
-  margin: 0 auto;
-}
 ul.topInfoW {
   display: flex;
   justify-content: right;
