@@ -903,6 +903,9 @@ body {
   #mo{
     display: block;
   }
+  #mo>h2{
+    font-size: 3em;
+  }
 }
 @media (max-width: 500px){
   * {
