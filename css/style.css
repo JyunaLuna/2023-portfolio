@@ -907,7 +907,7 @@ body {
     font-size: 3em;
   }
 }
-@media (max-width: 500px){
+@media (max-width: 510px){
   * {
     font-size: 4px;
   }
